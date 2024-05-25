@@ -6,7 +6,7 @@ Wild guess, you've been told you have to run Kubernetes, but don't quite know wh
 I am also open to feedback and pull requests from other K8s practitioners. This is meant to help those in need.
 
 
-## Cluster Hardening
+## Cluster Setup & Hardening
 
 ## Supply Chain
 
