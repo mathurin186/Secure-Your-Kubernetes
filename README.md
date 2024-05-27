@@ -26,3 +26,6 @@ https://faun.pub/kubernetes-the-right-way-security-checklist-c38650898807
 https://collabnix.github.io/kubetools/#cost-optimisation
 
 https://collabnix.github.io/kubetools/#cost-optimisation
+
+Karpenter
+https://karpenter.sh/docs/
