@@ -32,9 +32,8 @@ Subjects: Describe the entities (Users, Groups, Service Accounts) that RBAC mana
 RoleBindings/ClusterRoleBindings: Explain how these bind Roles/ClusterRoles to Subjects, granting them specific permissions.
 
 Two examples to look at, Role and ClusterRole:
-```
 Role
-
+```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -45,10 +44,8 @@ rules:
   resources: ["pods"]
   verbs: ["get", "watch", "list"]
 ```
-and
-```
 Cluster Role
-
+```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
