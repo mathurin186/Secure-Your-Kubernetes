@@ -5,6 +5,12 @@ Wild guess, you've been told you have to run Kubernetes, but don't quite know wh
 
 I am also open to feedback and pull requests from other K8s practitioners. This is meant to help those in need.
 
+## Table of Contents
+1. Cluster Setup & Hardening (RBAC / Controlplane / Kubelet)
+2. Supply Chain
+3. Runtime Security
+4. Monitoring & Logging
+
 
 ## Cluster Setup & Hardening
 
@@ -24,6 +30,38 @@ What are the benefits of utilizing RBAC?
 Roles/ClusterRoles: Define sets of permissions for resources within a namespace (Roles) or across the entire cluster (ClusterRoles).
 Subjects: Describe the entities (Users, Groups, Service Accounts) that RBAC manages access for.
 RoleBindings/ClusterRoleBindings: Explain how these bind Roles/ClusterRoles to Subjects, granting them specific permissions.
+
+Two examples to look at, Role and ClusterRole:
+```
+Role
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: pod-reader
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
+```
+and
+```
+Cluster Role
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # "namespace" omitted since ClusterRoles are not namespaced
+  name: secret-reader
+rules:
+- apiGroups: [""]
+  #
+  # at the HTTP level, the name of the resource for accessing Secret
+  # objects is "secrets"
+  resources: ["secrets"]
+  verbs: ["get", "watch", "list"]
+```
 
 
 ## Supply Chain
