@@ -8,6 +8,24 @@ I am also open to feedback and pull requests from other K8s practitioners. This 
 
 ## Cluster Setup & Hardening
 
+### RBAC (Role Based Access Control)
+When you deploy workloads into Kubernetes clusters, by default the users will have access to everything they can touch. Because of this, you want to give each user only the specific amount of privileges needed for them to do their job. 
+Pulling this from [Okta's website](https://www.okta.com/identity-101/minimum-access-policy/#:~:text=A%20minimum%20access%20policy%20restricts,employees%20to%20do%20their%20jobs.) 
+```
+"A minimum access policy restricts a user to only the least amount of access to privileged resources and permissions that are needed to perform an authorized activity or activities, such as those necessary for employees to do their jobs."
+```
+
+What are the benefits of utilizing RBAC?
+* Least Privilege: Users only have access to what they need.
+* Reduced Attack Surface: Limits damage from compromised accounts.
+* Improved Auditability: Tracks who has access to what.
+* RBAC Components: Because of this, we need to learn about the components of RBAC in Kubernetes. 
+
+Roles/ClusterRoles: Define sets of permissions for resources within a namespace (Roles) or across the entire cluster (ClusterRoles).
+Subjects: Describe the entities (Users, Groups, Service Accounts) that RBAC manages access for.
+RoleBindings/ClusterRoleBindings: Explain how these bind Roles/ClusterRoles to Subjects, granting them specific permissions.
+
+
 ## Supply Chain
 
 ## Runtime Security
